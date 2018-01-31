@@ -17,19 +17,25 @@ class GossipsController < ApplicationController
   end
 
   def edit
-    @gossip = gossip.find(params[:id])
+    @gossip = Gossip.find(params[:id])
   end
 
   def update
-    @gossip = gossip.find(params[:id])
+    @gossip = Gossip.find(params[:id])
     @gossip.update(gossip_params)
 
     redirect_to root_path
   end
+  
+def destroy
+        @gossip = Gossip.find(params[:id])
+        @gossip.destroy
+        redirect_to gossips_path
+    end
 
-
-  def gossip_params
-    params.require(:gossip).permit(:anonymous_author, :content)
-  end
+private
+ 		def gossip_params
+    	params.permit(:anonymous_author, :content)
+  	end
 
 end
