@@ -1,8 +1,12 @@
-<h1>Gossips#new</h1>
-<p>Find me in app/views/gossips/new.html.erb</p>
+<h1>Post un nouveau gossip !</h1>
+<h2>Dis nous tout !</h2>
 
 <%= form_for @gossip, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+<p>Quel est ton pseudo?</p>
   <%= f.text_field :anonymous_author %>
+  <p>Quel est ton ragot?</p>
   <%= f.text_area :content, size: "60x12" %>
-  <%= f.submit "Create" %>
+  <%= f.submit "Envoyer le Gossip !" %>
+
+
 <% end %>

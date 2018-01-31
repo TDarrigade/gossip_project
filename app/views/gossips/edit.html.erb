@@ -1,0 +1,16 @@
+<h1> Editer mon gossip </h1>
+
+<%= form_tag gossips_path(@gossip) do %>
+ 
+  <p> <%= label_tag 'anonymous_author', "Votre pseudo anonyme" %> </p>
+  <p> <%= text_field_tag 'anonymous_author' %> </p>
+  <p> <%= label_tag 'content', "Le contenu du potin" %> </p>
+  <p> <%= text_area_tag 'content' %> </p>
+<p> <%= submit_tag 'Modifier'%></p>
+<% end %>
+
+
+
+
+
+<p> <%= link_to('Voir tous les gossips', gossips_path) %> </p> 

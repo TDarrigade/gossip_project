@@ -1,0 +1,18 @@
+<p>
+  <strong>Pseudo de l'auteur annonyme : </strong>
+  <%= @gossip.anonymous_author %>
+</p>
+
+<p>
+  <strong>Contenu du gossip : </strong>
+  <%= @gossip.content %>
+
+</p>
+
+<p>
+  <%= link_to 'Editer le Ragot', edit_gossip_path %>
+</p>
+
+<p>
+  <%= link_to 'retour', gossips_path %>>
+</p>
