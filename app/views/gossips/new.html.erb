@@ -1,12 +1,13 @@
 <h1>Post un nouveau gossip !</h1>
 <h2>Dis nous tout !</h2>
 
-<%= form_for @gossip, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
-<p>Quel est ton pseudo?</p>
-  <%= f.text_field :anonymous_author %>
-  <p>Quel est ton ragot?</p>
-  <%= f.text_area :content, size: "60x12" %>
-  <%= f.submit "Envoyer le Gossip !" %>
 
 
+<%= form_tag gossips_path(@gossip) do %>
+
+  <p> <%= label_tag 'anonymous_author', "Votre pseudo anonyme :" %> </p>
+  <p> <%= text_field_tag 'anonymous_author' %> </p>
+  <p> <%= label_tag 'content', "Votre nouveau gossip : " %> </p>
+  <p> <%= text_area_tag 'content' %> </p>
+<p> <%= submit_tag 'Envoyer'%></p>
 <% end %>

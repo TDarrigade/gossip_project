@@ -4,7 +4,7 @@ class GossipsController < ApplicationController
   end
 
   def create
-    @gossip = Gossip.new(gossip_params)
+    @gossip = Gossip.create(gossip_params)
     @gossip.save
     redirect_to @gossip
   end
@@ -32,7 +32,7 @@ def destroy
         @gossip.destroy
         redirect_to gossips_path
     end
-    
+
 def index
 		@gossips = Gossip.all
 	end
